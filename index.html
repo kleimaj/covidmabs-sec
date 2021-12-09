@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+	<base href="/CovidMabs/"/>
+	<!--<base href="/" />-->
+	<meta charset="utf-8">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<title>COVIDMABS</title>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5PP4375');	</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Main CSS File -->
+    <link rel="stylesheet" href="css/main.css" />
+	<!-- VIDEOJS CSS -->
+	<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+	<!-- PANELLUM -->
+	<link rel="stylesheet" href="css/pannellum.css"/>
+	<script type="text/javascript" src="js/pannellum.js"></script>
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- ANGULAR -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+	<!-- CUSTOM SCRIPTS -->
+	<script src="js/booth-scripts.js"></script>
+	
+	<!-- OG Meta Tags -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Regeneron Scientific Experience Center">
+	<meta property="og:image" content="https://www.covidmabs.com/images/share-banner.jpg">
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:title" content="Regeneron Scientific Experience Center">
+	<meta name="twitter:image" content="https://www.covidmabs.com/images/share-banner.jpg">
+	
+</head>
+
+<body ng-app="SEC">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PP4375"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+	<ui-view></ui-view>
+	
+	<footer>
+		<h5>You understand by submitting your email address it will be used to contact you to provide information related to COVID-19 and in accordance with <a class="regeneron-link" href="https://www.regeneron.com/privacy-policy">Regeneron's Privacy Notice</a>.</h5>
+		
+		<form id="subscribe-form" class="mobile-subscribe">
+			<input type="text" name="txtEmail" placeholder="Email Address" maxlength="250">
+			<span><span><button type="submit" class="disabled">Subscribe</button></span></span>
+		</form>
+		
+		
+		<ul class="social">
+			<li><a class="email-share"><img src="images/icons/email-mobile.svg"></a></li>
+			<li><a class="share-btn linkedin" href="#"><img src="images/icons/linkedin-mobile.svg"></a></li>
+			<li><a class="share-btn twitter" href="#"><img src="images/icons/twitter-mobile.svg"></a></li>
+		</ul>
+		<hr>
+		<ul class="links">
+			<li><a class="regeneron-link" href="https://www.regeneron.com/terms">Terms of Use</a></li>
+			<li><a class="regeneron-link" href="https://www.regeneron.com/privacy-policy">Privacy Policy</a></li>
+			<li><a class="regeneron-link" href="https://www.regeneron.com/social-media-terms">Social Media Terms of Engagement</a></li>
+			<li><a class="regeneron-link" href="https://www.regeneron.com/contact">Contact Us</a></li>
+			<li><a class="external-link" href="https://www.phe.gov/emergency/events/COVID19/investigation-MCM/Pages/default.aspx">Resources</a></li>
+		</ul>
+		<p>Copyright &copy; 2021 Regeneron Pharmaceuticals Inc. All rights reserved. All trademarks mentioned are property of their respective owners.<br>CAI-EM-0016</p>
+	</footer>
+	
+	<div id="cookie-modal" class="modal">
+		<h1>This website www.COVIDMABS.com (the "Site") uses "cookies"</h1>
+		<p>Cookies are small text files which are automatically placed on your computer by the internet browser when you visit the Site. A cookie can, amongst other things, track the web pages you visit and the options you use. Regeneron Pharmaceuticals Inc. and its affiliates use this data to make the Site more user-friendly and efficient. We use Google Analytics cookie service to track and obtain reports on how visitors are using the Site. The information obtained with this cookie, which includes the IP address of your computer, will be transmitted and stored by Google on servers in the United States. Google may share that information with third parties if Google is obliged to do so by law or to the extent such third parties are processing this information on behalf of Google. Regeneron has no influence on such use.</p>
+		<ul class="btn-set">
+			<li><a class="decline-btn" href="http://www.covidmabs.com/"><i class="fas fa-times"></i>Decline</a></li>
+			<li><a class="accept-btn" target="_blank" href="#"><i class="fas fa-check"></i>Accept</a></li>
+		</ul>
+	</div>
+	
+	<div id="subscribe-ty-modal" class="modal"><h1 style="margin:0;">Thank you for subscribing!</h1></div>
+	
+	<div id="subscribe-modal" class="modal">
+		<h1>Subscribe for Updates</h1>
+		<form id='subscribe-form'>
+			<input type="text" name="txtEmail" placeholder="Email Address" maxlength="250">
+			<p>You understand by submitting your email address it will be used to contact you to provide information related to COVID-19 and in accordance with <a class="regeneron-link" href="https://www.regeneron.com/privacy-policy">Regeneron's Privacy Notice</a>.</p>
+			<ul class="btn-set">
+				<li><button type="reset"><i class="fas fa-times"></i>Cancel</button></li>
+				<li><button type="submit" class="disabled"><i class="fas fa-check"></i>Submit</button></li>
+			</ul>
+			<h5>Thank you for subscribing!</h5>
+		</form>
+		<a class="close-btn"><i class="fas fa-times"></i>Close</a>
+	</div>
+
+
+	<div id="hcp-modal" class="modal">
+		<ul class="btn-set">
+			<li><a class="hcp-btn" href="#"><span>I am a</span>US HEALTHCARE<br>PROFESSIONAL</a></li>
+			<!--<li><a class="patient-btn external-link" href="https://patient.covid-frontline.com/"><span>I am a</span>US PATIENT OR<br>CAREGIVER</a></li>-->
+		</ul>
+	</div>
+
+	<div id="external-link-modal" class="modal">
+		<h1>You are now leaving COVIDMABS.com.</h1>
+		<p><strong>Please note:</strong> By clicking continue, you will be leaving this Regeneron-hosted US website and going to another, entirely independent website. Regeneron provides these links as a service to its website visitors and users; however, it takes no responsibility for the information on any website but its own.</p>
+		<ul class="btn-set">
+			<li><a class="cancel-btn" href="#"><i class="fas fa-times"></i>Cancel</a></li>
+			<li><a class="continue-btn" target="_blank" href="#"><i class="fas fa-check"></i>Continue</a></li>
+		</ul>
+	</div>
+
+	<div id="regeneron-link-modal" class="modal">
+		<!--<h1>You are now leaving COVIDMABS.com</h1>-->
+		<h1>You are now leaving COVIDMABS.com to visit another Regeneron Pharmaceuticals website.</h1>
+		<ul class="btn-set">
+			<li><a class="cancel-btn" href="#"><i class="fas fa-times"></i>Cancel</a></li>
+			<li><a class="continue-btn" target="_blank" href="#"><i class="fas fa-check"></i>Continue</a></li>
+		</ul>
+	</div>	
+	
+	<script src="js/sec-config.js"></script>
+
+</body>
+</html>

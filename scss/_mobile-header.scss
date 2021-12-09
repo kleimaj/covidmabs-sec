@@ -1,0 +1,124 @@
+// header.scss
+
+header {
+	display: block;
+	width: 100%;
+	font-size: 2em;
+	background-color: rgba($white,.9);
+	color: $dk-blue;
+	padding: .5em 5vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	border-bottom: 1px solid rgba($gray,.5);
+	
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		li {
+			h1 {
+				font-size: 1rem;
+				text-align: center;
+				color: $dk-blue;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+#mobile-nav {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vw;
+	z-index: 99999;
+	font-size: 0;
+	
+	&.active {
+		display: block;
+	}
+	
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0; 
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba($black,.7);
+		z-index: -1;
+	}
+	
+	> a,
+	> ul {
+		display: inline-block;
+		vertical-align: top;
+		font-size: 1rem;
+	}
+	
+	> a {
+		width: 20vw;
+		height: 20vw;
+		background-color: rgba($white,.5);
+		text-align: center;
+		line-height: 20vw;
+	}
+	
+	> ul {
+		width: 80vw;
+		background-color: $white;
+		color: $dk-blue;
+		font-size: 1.15rem;
+		//line-height: 20vw;
+		
+		> li {
+			
+			&:not(:first-of-type) {
+				padding-left: 5vw;
+			}
+			
+			> a {
+				display: block;
+				background-color: $dk-blue;
+				color: $white;
+				padding: 0 5vw;
+				line-height: 20vw;
+				
+				i {
+					margin-right: .5em;
+				}
+			}
+			
+			> ul {
+				padding: 0 5vw;
+				
+				li {
+					height: 20vw;
+					
+					&:not(:last-of-type) {
+						border-bottom: 1px solid rgba($gray,.5);
+					}
+					
+					a {
+						display: block;
+						position: relative;
+						top: 50%;
+						@include transform(translateY(-50%));
+					}
+				}
+			}
+			
+			&:nth-last-of-type(2) > ul {
+				border-bottom: 3px solid rgba($gray,.5);
+			}
+		}
+	}
+}
+

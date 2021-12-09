@@ -1,0 +1,163 @@
+// landing-page.scss
+
+#landing-page {
+	background-color: $dk-blue;
+	padding: 17vh 5vw;
+	position: relative;
+	
+	img.logo {
+		width: 25vw;
+	}
+	
+	hr {
+		border-top: 1px solid $lt-blue;
+	}
+	
+	h1 {
+		font-size: 3em;
+		font-style: italic;
+		color: $white;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	
+	h2 {
+		text-align: center;
+		font-weight: 600;
+		color: rgba($white, .9);
+		padding: 1em 0 0 0;
+	}
+	
+	.covid {
+		position: absolute;
+		@include transform(translate(-50%,-50%));
+		z-index: 999;
+	}
+	
+	#covid-1 {
+		width: 22vh;
+		left: 84.5vw;
+		top: 11vh;
+	}
+	#covid-2 {
+		width: 12vh;
+		left: 98vw;
+		top: 30vh;
+	}
+	#covid-3 {
+		width: 10vh;
+		left: 6vw;
+		top: 31vh;
+	}
+	#covid-4 {
+		width: 23vh;
+		left: 82vw;
+		top: 42vh;
+	}
+	#covid-5 {
+		width: 62vw;
+		top: 56vh;
+		left: 0vw;
+		z-index: 999;
+	}
+	
+	#social-menu {
+		display: none;
+	}
+	
+	@media (max-width:450px) {
+		padding: 5vh 5vw;
+		
+		img.logo {
+			width: 50vw;
+		}
+		
+		#covid-1 {
+			width: 22vw;
+			left: 84.5vw;
+			top: 6vh;
+		}
+		#covid-2 {
+			width: 12vw;
+			left: 98vw;
+			top: 15vh;	
+		}
+		#covid-3 {
+			width: 10vw;
+			left: 6vw;
+			top: 18vh;
+		}
+		#covid-4 {
+			width: 20vw;
+			left: 90vw;
+			top: 40vh;
+		}
+		#covid-5 {
+			width: 50vh;
+			left: -20vw;
+			top: 46vh;
+		}
+	}
+}
+
+a#hcp-btn {
+	width: 100vw;
+	display: block;
+	color: rgba($white, .85);
+	font-size: 2em;
+	font-family: $robotoCond;
+	font-weight: 700;
+	line-height: 1.15em;
+	
+	.label {
+		font-size: 1.5em;
+		padding: 1.5em 1em 1.5em 30vw;
+		background-color: rgba($teal,.7);
+		
+		@media (max-width:450px) {
+			font-size: 2rem;
+			padding: 1em 1em 1em 30vw;
+		}
+	}
+
+	&:hover {
+		color: $white;
+		background-color: rgba($teal,.9);
+	}
+	
+	span {
+		font-size: 1.5rem;
+		display: block;
+		font-family: $roboto;
+		font-weight: 400;
+		width: 100%;
+		line-height: 1em;
+	}
+	
+	.enter {
+		width: 100%;
+		padding: .5em 0;
+		background-color: $teal;
+
+		img {
+			width: 25%;
+			@include transform(translateX(-50%));
+			position: relative;
+			left: 50%;
+				
+			@media (max-width:450px) {
+				width: 65%;
+			}
+		}
+	}
+	
+}
+
+nav {
+	display: none;
+}
+
+.desktop-footer {
+	display: none;
+}
+

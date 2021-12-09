@@ -1,0 +1,25 @@
+<a id="back-btn" href="" ui-sref="PodB.Main"><i class="fas fa-chevron-left"></i>Back</a>
+
+<iframe class="pdf-viewer" src="./pdf/web/viewer.html?file=../../assets/POD-B/Key_Literature_Final.pdf"></iframe>
+
+<div class="mobile-pdf">
+	<a class="download-btn" href="assets/POD-B/Key_Literature_Final.pdf" target="_blank" download>Download <i class="fas fa-download"></i></a>
+	<ul>
+		<!--<li title="1/1"><img src="assets/POD-B/svg/Key_Literature_Final-01.svg"></li>-->
+		<li title="1/1"></li>
+	</ul>
+</div>
+
+
+<script>
+$(function() {
+	$('.pdf-viewer').load(function() {
+		$('pdf-viewer').contents().find('a').click(function(e) {
+			e.preventDefault();
+			console.log( $(this).attr('href') );
+		});
+	});
+	
+	$('.mobile-pdf ul li').load('assets/POD-B/svg/Key_Literature_Final-01.svg');
+});
+</script>

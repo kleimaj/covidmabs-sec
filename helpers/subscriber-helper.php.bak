@@ -1,0 +1,27 @@
+<?php
+    require_once '../../resources/app_config.php';
+    use resources\library\AppUtility;
+    use resources\library\DBUtility;
+
+    $appUtil = new AppUtility();
+    $conn = new DBUtility($appUtil->GetDBMainStr());
+    
+    if(!empty($_POST)){
+        $SqlText = 'INSERT INTO 
+            Subscribers 
+                ([Email], dCreated) 
+            VALUES 
+                (?, getdate());
+        ';
+        $SqlParams = array($_POST['txtEmail']);
+        $dataSet = $conn->ExecuteDataQuery($SqlText, $SqlParams);
+        if(!$dataSet){
+            http_response_code(400);
+            echo json_encode(array("msg"=>"There was an error, please try again."));
+            exit();
+        }else{
+            echo json_encode(array("msg"=>"Pass"));
+            exit();
+        }
+    }
+?>

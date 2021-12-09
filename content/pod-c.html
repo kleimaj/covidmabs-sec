@@ -1,0 +1,52 @@
+<a id="back-btn" href="" ui-sref="ExhibitHall"><i class="fas fa-chevron-left"></i>Back</a>
+
+<h1 class="pod-header">Supporting Your Patients</h1>
+
+<div class="pod-menu">
+	<img class="pod-header" src="./images/flags/pod-c-header.svg">
+	<ul>
+		<li>
+			<a class="menu-toggle infographic" href="">Patients at High Risk for Severe COVID-19 (multilingual)</a>
+			<ul>
+				<li>
+					<a href="" ui-sref="PodC.1a" class="infographic">
+						<span>Infographic</span>Patients at High Risk for Severe COVID-19
+					</a>
+				</li>
+				<li>
+					<a href="" ui-sref="PodC.1b" class="infographic">
+						<span>Infographic</span>Pacientes de alto riesgo para COVID-19 severo
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a class="menu-toggle infographic" href="">Educate Your Patients (multilingual)</a>
+			<ul>
+				<li>
+					<a href="" ui-sref="PodC.2a" class="infographic">
+						<span>Infographic</span>Educate Your Patients
+					</a>
+				</li>
+				<li>
+					<a href="" ui-sref="PodC.2b" class="infographic">
+						<span>Infographic</span>Eduque a Sus Pacientes
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+	</ul>
+
+</div>
+
+<!--<a id="back-btn" href="" ui-sref="ExhibitHall"><img src="images/icons/back.svg">Go Back</a>-->
+
+<script>
+	$(function() {
+		$('a.menu-toggle').click(function(e) {
+			e.preventDefault();
+			$(this).toggleClass('expanded');
+		});
+	})
+</script>

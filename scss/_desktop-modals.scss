@@ -1,0 +1,190 @@
+// modals.scss
+
+.modal {
+	display: none;
+	box-shadow: 0 0 20px rgba($black,.7);
+	border: 2px solid $lt-blue;
+	background-color: $white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%,-50%));
+	z-index: 9999;
+	font-size: 1rem;
+	padding: 2em 4em;
+	width: 70%;
+	
+	&.active {
+		display: block;
+	}
+	
+	h1, 
+	p {
+		display: block;
+		width: 100%;
+		font-size: 1.25em;
+		line-height: 1.25em;
+		color: $dk-blue;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+	
+	h1 {
+		font-weight: 500;
+	}
+	
+	p {
+		font-weight: 300;
+		
+		a {
+			font-weight: 500;
+			text-decoration: underline;
+			display: inline;
+		}		
+	}
+	
+	input {
+		border: 1px solid $lt-blue;
+		font-family: $roboto;
+		color: $black;
+		padding: .5em 1em;
+		width: 80%;
+		margin: 0 10% 1em 10%;
+		font-size: 1.25em;
+	}
+	
+	ul.btn-set {
+		width: 100%;
+		text-align: center;
+		
+		li {
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 1em;
+		}
+	}
+	
+	button,
+	a.cancel-btn,
+	a.continue-btn,
+	a.accept-btn,
+	a.decline-btn {
+		border: 0;
+		color: $white;
+		text-transform: uppercase;
+		letter-spacing: .15em;
+		font-weight: 500; 
+		padding: 1em 2em;
+		cursor: pointer;
+		
+		&:hover {
+			box-shadow: 0 0 .5em rgba($lt-blue, .7);
+		}
+		
+		i {
+			margin-right: .25em;
+		}
+	}
+		
+	button[type=reset],
+	a.cancel-btn,
+	a.decline-btn {
+		background-color: rgba($lt-blue, .5);
+	}
+
+	button[type=submit],
+	a.continue-btn,
+	a.accept-btn {
+		background-color: $lt-blue;
+	}
+	
+	a {
+		display: block;
+		text-align: center;
+	}
+		
+	
+	h5 {
+		display: none;
+		font-size: 1.25rem;
+		text-align: center;
+		font-style: italic;
+		color: $dk-blue;
+	}
+	
+	.close-btn {
+		display: none;
+		font-size: 1rem;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		text-align: right;
+		color: $lt-blue;
+		cursor: pointer;
+		
+		i {
+			margin-right: .5em;
+		}
+		
+		&:hover {
+			@include filter(drop-shadow(0px 0px 4px rgba($lt-blue,.5)));
+		}
+	}
+}
+
+#hcp-modal {
+	padding: 2em;
+	width: 50%;
+	
+	ul.btn-set {
+		width: 100%;
+		text-align: center;
+		font-size: 0;
+		
+		li {
+			display: inline-block;
+			vertical-align: top;
+			//padding: 0 1em;
+			font-size: 1rem;
+			width: 100%;
+			
+			&:first-child {
+				padding-right: 1em;
+			}
+			
+			&:last-child {
+				padding-left: 1em;
+			}
+
+			a {
+				&.hcp-btn,
+				&.patient-btn {
+					color: rgba($white,.85);
+					font-family: $robotoCond;
+					font-size: 2.5rem;
+					line-height: 1.15em;
+					padding: 1rem 1em;
+					font-weight: 700;
+					
+					@media (max-width: 1000px) {
+						font-size: 3vw;
+					}
+
+					span {
+						font-size: 1rem;
+						line-height: 1.15em;
+						display: block;
+					}
+				}
+
+				&.hcp-btn {
+					background-color: $teal;
+				}
+
+				&.patient-btn {
+					background-color: $lt-blue;
+				}
+			}
+		}
+	}
+}

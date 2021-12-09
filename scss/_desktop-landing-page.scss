@@ -1,0 +1,207 @@
+// landing-page.scss
+
+#landing-page {
+	background-color: $dk-blue;
+	width: 100vw;
+	height: 48vh;
+	padding: 8vh 10vw;
+	
+	img.logo {
+		width: 16vw;
+	}
+	
+	hr {
+		border-top: 1px solid $lt-blue;
+	}
+	
+	h1 {
+		font-size: 4.1vw;
+		font-style: italic;
+		color: $white;
+		text-align: center;
+		text-transform: uppercase;
+		padding: .5em 0 .25em 0;
+		letter-spacing: .15em;
+	}
+	
+	h2 {
+		text-align: center;
+		font-weight: 600;
+		color: rgba($white, .9);
+		padding: 1em 0 0 0;
+	}
+	
+	.covid {
+		position: absolute;
+		@include transform(translate(-50%,-50%));
+		z-index: 999;
+	}
+	
+	#covid-1 {
+		width: 6vw;
+		left: 84.5vw;
+		top: 12vh;
+	}
+	#covid-2 {
+		width: 3.6vw;
+		left: 90vw;
+		top: 18vh;
+	}
+	#covid-3 {
+		width: 2.6vw;
+		left: 80vw;
+		top: 35.9vh;
+	}
+	#covid-4 {
+		width: 10.2vw;
+		left: 10.3vw;
+		top: 40.7vh;
+	}
+	#covid-5 {
+		width: 50vh;
+		left: 30vw;
+		top: 60vh;
+		z-index: 999;
+	}
+	
+	#social-menu {
+		display: inline-block;
+		position: absolute;
+		top: 38vh;
+		right: 2vw;
+		z-index: 9999;
+		background-color: transparent;
+		padding: 1em 0 0 0;
+
+		ul {
+			display: inline-block;
+			text-align: center;
+			width: 100%;
+
+			li {
+				display: inline-block;
+				width: 4vw;
+				min-width: 38px;
+				cursor: pointer;
+
+				img {
+					width: 100%;
+				}
+			}
+		}	
+	}
+}
+
+a#hcp-btn {
+	width: 100vw;
+	display: block;
+	color: rgba($white, .85);
+	font-size: 2em;
+	font-family: $robotoCond;
+	font-weight: 700;
+	line-height: 1.15em;
+	padding: 5px;
+	@include filter(drop-shadow(0 5px 10px rgba(0,0,0,.5)));
+	
+	.label {
+		padding: 2em 1em 2em 48vw;
+		background-color: rgba($teal,.7);
+	}
+
+	&:hover {
+		.label {
+			color: $white;
+			background-color: rgba($teal,.9);
+		}
+		
+		.enter img {
+			@include transform(translateX(-50%) scale(.95));
+		}
+	}
+	
+	span {
+		font-size: 1.5rem;
+		display: block;
+		font-family: $roboto;
+		font-weight: 400;
+		width: 100%;
+		line-height: 1em;
+	}
+	
+	.enter {
+		width: 100%;
+		padding: .5em 0;
+		background-color: $teal;
+
+		img {
+			height: 1.5rem;
+			@include transform(translateX(-50%));
+			position: relative;
+			left: 55%
+		}
+	}
+	
+	
+}
+
+nav {
+	display: block;
+	
+	ul {
+		font-size: 0;
+		width: 100%;
+		padding: 1rem 0;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		align-content: center;
+		align-items: center;
+		
+		li {
+			font-size: 1rem;
+			flex-grow: 3;
+			
+			&:not(:last-of-type) {
+				border-right: 1px solid $gray;
+			}
+			
+			a {
+				display: block;
+				color: $dk-blue;
+				font-weight: 600;
+				text-align: center;
+				line-height: 1.5em;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+.desktop-footer {
+	display: block;
+	background-color: $white;
+	width: 100%;
+	//position: absolute;
+	//left: 0;
+	//bottom: 0;
+	padding: 0 !important;
+	
+	p {
+		width: 100%;
+		text-align: center;
+		color: $gray;
+	}
+	
+	span.job-number {
+		display: block;
+		font-size: .8rem;
+		line-height: 1.25em;
+		text-align: center;
+		color: $dk-blue;
+	}
+}
+

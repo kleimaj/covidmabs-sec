@@ -1,0 +1,229 @@
+// exhibit-hall.scss
+
+#lobby {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: url("../images/booth/Regeneron_pulled_out_view_JK08.jpg") no-repeat center;
+	background-size: 120%;
+	
+	&.blur {
+		~ #lobby-nav {
+			display: none;
+		}
+	}
+}
+
+#pano,
+#mobile-nav,
+#sub-footer {
+	display: none;
+}
+
+a.nav-btn {
+	display: block;
+	position: absolute;
+	z-index: 9999;
+	@include transform(translate(-50%,-50%));
+	font-size: 0;
+	//background: red;
+	
+	> * {
+		font-size: 1rem;
+	}
+	
+	&.role-of-mabs-btn {
+		top: 48%;
+		left: 15%;
+		width: 38vw;
+		height: 25vw;
+		
+		> img {
+			@include transform(rotate(-45deg));
+			bottom: 0;
+			right: 0;
+		}
+	}
+	
+	&.our-research-data-btn {
+		top: 44%;
+		left: 50%;
+		width: 30vw;
+		height: 25vw;
+		
+		> img {
+			left: 50%;
+			bottom: 0;
+			@include transform(translateX(-50%));
+		}
+	}
+	
+	&.facilitating-access-btn {
+		top: 48%;
+		left: 86%;
+		width: 40vw;
+		height: 25vw;
+		
+		> img {
+			@include transform(rotate(45deg));
+			bottom: 0;
+			left: 0;
+		}
+	}
+	
+	> img {
+		width: 4vh;
+		position: absolute;
+	}
+	
+	> span {
+		height: 10vh;
+		position: absolute;
+		bottom: 92%;
+		left: 50%;
+		@include transform(translateX(-50%) scale(0));
+		transform-origin: 50% 100%;
+		display: block;
+		//@include transition(height .5s);
+		@include transition(transform .5s);
+		
+		img {
+			height: 100%;
+		}
+	}
+	
+	&:hover > span {
+		@include transform(translateX(-50%) scale(1));
+		//height: 10vh;
+	}
+}
+
+#main-menu {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	font-size: 0;
+	
+	img {
+		width: 100%;
+	}
+	
+	#role-of-mabs-btn,
+	#our-research-data-btn,
+	#facilitating-access-btn,
+	#resources-btn,
+	#medical-inquiries-btn {
+		cursor: pointer;
+		
+		&:hover .st1 {
+			@include filter(drop-shadow(0px 0px 5px $white));
+		}
+	}
+}
+
+#social-menu {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	background-color: $dk-blue;
+	padding: 1em 0 0 0;
+	
+	p {
+		color: $lt-blue;
+		font-style: italic;
+		text-align: center;
+		padding: 0 1em;
+		word-break: keep-all;
+	}
+	
+	ul {
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		
+		li {
+			display: inline-block;
+			width: 4vw;
+			min-width: 38px;
+			cursor: pointer;
+			
+			a {
+				display: block;
+			
+				img {
+					width: 100%;
+				}
+				
+				&:hover {
+					@include filter(drop-shadow(0px 0px 8px rgba($lt-blue,.5)));
+				}
+			}
+		}
+	}
+	
+	a#subscribe-btn {
+		display: block;
+		background: $teal;
+		width: 100%;
+		color: $white;
+		text-align: center;
+		line-height: 2em;
+		//text-transform: uppercase;
+		//letter-spacing: .15em;
+		
+		i {
+			margin-right: .5em;
+			text-shadow: 0 0 .25em rgba($white,.3);
+		}
+		
+		&:hover > * {
+			//color: $dk-blue;
+			@include filter(drop-shadow(0px 0px 5px $white));
+		}
+	}
+}
+
+a#back-btn {
+	display: inline-block;
+	position: absolute;
+	top: 5vh;
+	left: 2vw;
+	z-index: 9999;
+	color: $dk-blue;
+	font-size: 1.25em;
+	font-weight: 400;
+	
+	i {
+		color: rgba($gray,.5);
+		margin-right: .5em;
+	}
+
+	
+	&:hover {
+		@include filter(drop-shadow(0px 0px 4px $lt-blue));
+	}
+}
+
+#shader {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($white,.5);
+	z-index: 2;
+	
+	&.active {
+		display: block;
+	}
+}
+
+

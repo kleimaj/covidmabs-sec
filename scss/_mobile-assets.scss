@@ -1,0 +1,275 @@
+// assets.scss
+
+h1.pod-header {
+	//margin-top: 4em;
+	font-size: 1.15rem;
+	padding: 0 5vw 2vh 5vw;
+	color: $lt-blue;
+	font-weight: 700;
+	text-align: center;
+}
+
+.pod-menu {	
+	width: 96vw;
+	margin: 0 2vw;
+	box-shadow: 0 0 10px rgba($gray,.5);
+	border-radius: 5px;
+	
+	img.pod-header {
+		display: none;
+	}
+	
+	> ul {
+		display: block;
+		padding: 0 2vw;
+		
+		> li {
+			display: block;
+			
+			&:not(:last-of-type) {
+				border-bottom: 1px solid rgba($gray,.3);
+			}
+			
+			h2 {
+				font-weight: 500;
+				color: $gray-blue;
+				padding: 1em 1em 0 2em;
+				
+				a:after {
+					
+				}
+			}
+			
+			a {
+				display: flex;
+				align-items: center;
+				flex-wrap: nowrap;
+				flex-direction: row;
+				align-content: flex-start;
+				justify-content: flex-start;
+				padding: 2vh 10vw 2vh 0;
+				color: $dk-blue;
+				font-size: 1.15em;
+				font-weight: 500;
+				position: relative;
+				
+				&:before {
+					content: '';
+					width: 3em;
+					min-width: 3em;
+					height: 3em;
+					margin-right: 2vw;
+					box-shadow: 0 0 10px rgba($gray,.3);
+					border-radius: 5px;
+				}
+				
+				&.infographic:before {
+					background: url("../images/icons/infographic.svg") no-repeat center;
+					background-size: contain;
+				}
+				
+				&.video:before {
+					background: url("../images/icons/video.svg") no-repeat center;
+					background-size: contain;
+				}
+				
+				&.poster:before {
+					background: url("../images/icons/poster.svg") no-repeat center;
+					background-size: contain;
+				}
+				
+				&.pdf:before {
+					background: url("../images/icons/pdf.svg") no-repeat center;
+					background-size: contain;
+				}
+				
+				&:after {
+					content: '\f054';
+					font-family: $fa;
+					font-size: 1em;
+					width: 1em;
+					height: 1em;
+					text-align: right;
+					position: absolute;
+					top: 50%;
+					right: 5vw;
+					@include transform(translateY(-50%));
+					font-weight: 700;
+					color: rgba($gray,.5);
+				}
+				
+				&.menu-toggle {
+					&:after {
+						content: '\f067';
+					}
+					
+					&.expanded {
+						&:after {
+							content: '\f068';
+						}
+						
+						~ ul {
+							display: block;
+						}
+					}
+				}
+				
+				span {
+					display: none;
+				}
+			}
+			
+			ul {
+				display: none;
+				padding: 0 2vw;
+
+				a {
+					font-size: .8em;
+					
+					&:before {
+						width: 2em;
+						min-width: 2em;
+						height: 2em;
+					}
+				}
+			}
+		}
+	}
+}
+
+.pdf-viewer {
+	display: none;
+}
+
+.asset-container {
+	position: relative;
+	width: 100%;
+	
+	> img.bg {
+		width: 100%;
+	}
+	
+	&.fullscreen {
+		position: relative;
+		top: 0;
+		left: 0;
+		@include transform(translate(0,0));
+	}
+}
+
+.mobile-pdf,
+.mobile-poster {
+	position: relative;
+	width: 100%;
+	background-color: rgba($dk-blue,.05);
+	display: block;
+	padding: 2vh 0;
+	border-top: 1px solid rgba($gray,.5);
+	border-bottom: 1px solid rgba($gray,.5);
+	color: $dk-blue;
+	
+	a.download-btn {
+		display: block;
+		font-size: 1rem;
+		width: 100%;
+		text-align: right;
+		padding: 0 10vw;
+	}
+	
+	ul {
+		width: 100%;
+		margin-top: 2vh;
+		
+		li {
+			width: 80vw;
+			margin: 0 10vw;
+			position: relative;
+			background-color: $white;
+			
+			&:not(:last-of-type) {
+				margin-bottom: 2vh;
+			}
+
+			&:before {
+				//content: '1/1';
+				content: attr(title);
+				position: absolute;
+				text-align: right;
+				right: 101%;
+				font-weight: 700;
+				font-size: .75em;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.mobile-poster ul li:before {
+	display: none;
+}
+
+.file-toggle {
+	position: absolute;
+	top: 3vw;
+	left: 50%;
+	@include transform(translateX(-50%));
+	z-index: 3;
+	font-size: 1rem;
+	
+	> * {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	a {
+		text-transform: uppercase;
+		color: rgba($dk-blue,.5);
+		font-weight: 600;
+		
+		&.left {
+			text-align: right;
+		}
+		
+		&.right {
+			text-align: left;
+		}
+		
+		&.active {
+			color: $dk-blue;
+		}
+	}
+	
+	.toggle {
+		width: 3em;
+		height: 1.5em;
+		background-color: $gray-blue;
+		border: 1px solid $dk-blue;
+		position: relative;
+		@include border-radius(1.5em);
+		margin: 0 1em;
+		cursor: pointer;
+		
+		&.left:after {
+			left: 0;
+		}
+		
+		&.right:after {
+			right: 0;
+		}
+		
+		&:after {
+			content: '';
+			background-color: $dk-blue;
+			display: block;
+			width: 1.5em;
+			height: 1.5em;
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+			@include border-radius(50%);
+		}
+	}
+}

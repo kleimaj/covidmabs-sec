@@ -1,0 +1,94 @@
+<div id="lobby" class="{{lobbyClass}}"></div>
+<div id="shader" class="{{shaderClass}}"></div>
+
+<!-- START PANNELLUM -->
+<div id="pano"><h1><span>Regeneron</span>Scientific Experience Center</h1></div>
+<script src="js/panellum-config.js"></script>
+<!-- END PANNELLUM -->
+
+<header>
+	<ul>
+		<li><a class="home-btn" href="" ui-sref="ExhibitHall"><i class="fas fa-home"></i></a></li>
+		<li><h1>Scientific Experience Center</h1></li>
+		<li><a class="menu-btn" href=""><i class="fas fa-bars"></i></a></li>
+	</ul>
+</header>
+
+<div id="mobile-nav">
+	<a class="close-btn"><i class="fas fa-times"></i></a>
+	<ul>
+		<li><a href="" ui-sref="ExhibitHall"><i class="fas fa-home"></i>Home</a></li>
+		<li>
+			<ul>
+				<li><a href="" ui-sref="PodA.Main">SARS-CoV-2 Variants &amp; mAbs</a></li>
+				<li><a href="" ui-sref="PodB.Main">mAb Mechanism of Action &amp; Data</a></li>
+				<li><a href="" ui-sref="PodC.Main">Supporting Your Patients</a></li>
+			</ul>
+		</li>
+		<li>
+			<ul>
+				<li><a class="external-link" href="https://www.phe.gov/emergency/events/COVID19/investigation-MCM/Pages/default.aspx">Resources</a></li>
+				<li><a class="regeneron-link" href="https://www.regeneron.com/medical-inquiries">Medical Inquiries</a></li>
+
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div id="lobby-nav">
+	<a class="nav-btn role-of-mabs-btn" href="" ui-sref="PodA.Main">SARS-CoV-2 Variants &amp; mAbs<img src="images/icons/arrow.svg"><span><img class="flag" src="images/flags/pod-a.svg"></span></a>
+	
+	<a class="nav-btn our-research-data-btn" href="" ui-sref="PodB.Main">mAb Mechanism of Action &amp; Data<img class="arrow" src="images/icons/arrow.svg"><span><img class="flag" src="images/flags/pod-b.svg"></span></a>
+	
+	<a class="nav-btn facilitating-access-btn" href="" ui-sref="PodC.Main">Supporting Your Patients<img class="arrow" src="images/icons/arrow.svg"><span><img class="flag" src="images/flags/pod-c.svg"></span></a>
+</div>
+
+<ui-view></ui-view>
+
+<div id="sub-footer">
+	<h5>Explore the following<br>for additional information</h5>
+	<ul>
+		<li><a class="external-link" href="https://www.phe.gov/emergency/events/COVID19/investigation-MCM/Pages/default.aspx"><img src="images/icons/resources.svg">Resources</a></li>
+		<li><a class="regeneron-link" href="https://www.regeneron.com/medical-inquiries"><img src="images/icons/medical-inquiries.svg">Medical Inquiries</a></li>
+	</ul>
+</div>
+
+<div id="main-menu"></div>
+
+<a class="external-link resources-btn" href="https://www.phe.gov/emergency/events/COVID19/investigation-MCM/Pages/default.aspx"></a>
+<a class="regeneron-link medical-inquiries-btn" href="https://www.regeneron.com/medical-inquiries"></a>
+
+
+<div id="social-menu">
+	<p>Share this on social media!</p>
+	<ul>
+		<li><a class="email-share"><img src="images/icons/email.svg"></a></li>
+		<li><a class="share-btn linkedin" href="#"><img src="images/icons/linkedin.svg"></a></li>
+		<li><a class="share-btn twitter" href="#"><img src="images/icons/twitter.svg"></a></li>
+	</ul>
+	<a id="subscribe-btn" href="#"><i class="fas fa-bookmark"></i><span>Subscribe</span></a>
+</div>
+
+
+
+<script>
+	$(function() {
+		$('#main-menu').load('images/sec-menu.svg', function() {
+			$('#role-of-mabs-btn, #our-research-data-btn, #facilitating-access-btn, #resources-btn, #medical-inquiries-btn').click(function(e) {
+				e.preventDefault();
+				console.log($(this).attr('id'));
+				$( 'a.' + $(this).attr('id') ).trigger('click');
+			});
+		});
+		
+		$('a.menu-btn').click(function(e) {
+			e.preventDefault();
+			$('#mobile-nav').toggleClass('active');
+		});
+		
+		$('#mobile-nav a').click(function(e) {
+			e.preventDefault();
+			$('#mobile-nav').removeClass('active');
+		})
+	});
+</script>
